@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
+import { personal } from "@/data/profile";
 import { bricolage, dmMono, inter } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio | Design system shell",
-  description:
-    "Design shell based on the hex.co marketing layout. Replace with your own content.",
+  title: `${personal.shortName} | Software engineer`,
+  description: personal.tagline,
+  openGraph: {
+    title: personal.shortName,
+    description: personal.tagline,
+    type: "website",
+  },
 };
 
 export default function RootLayout({

@@ -1,14 +1,14 @@
 import { PageShell } from "@/components/layout/PageShell";
+import { AchievementsSection } from "@/components/sections/AchievementsSection";
+import { CodingActivitySection } from "@/components/sections/CodingActivitySection";
+import { EducationSection } from "@/components/sections/EducationSection";
+import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
 import { FooterSection } from "@/components/sections/FooterSection";
-import { FoundersSection } from "@/components/sections/FoundersSection";
 import { Header } from "@/components/sections/Header";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
-import { ProblemSection } from "@/components/sections/ProblemSection";
-import { TrustSection } from "@/components/sections/TrustSection";
-import { VulnerabilitiesSection } from "@/components/sections/VulnerabilitiesSection";
-import { SphereSection } from "@/components/sections/SphereSection";
+import { ProjectTreeSection } from "@/components/sections/ProjectTreeSection";
+import { SkillsSection } from "@/components/sections/SkillsSection";
 
 export default function Home() {
   return (
@@ -17,12 +17,12 @@ export default function Home() {
         <Header />
         <main className="w-full min-w-0 flex-1">
           <HeroSection />
-          <SphereSection />
-          <ProblemSection />
-          <FoundersSection />
-          <VulnerabilitiesSection />
-          <HowItWorksSection />
-          <TrustSection />
+          <ExperienceSection />
+          <EducationSection />
+          <SkillsSection />
+          <CodingActivitySection />
+          <ProjectTreeSection />
+          <AchievementsSection />
           <FinalCtaSection />
           <FooterSection />
         </main>

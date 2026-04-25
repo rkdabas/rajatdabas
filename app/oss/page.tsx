@@ -1,4 +1,6 @@
 import { bricolage } from "@/app/fonts";
+import { personal } from "@/data/profile";
+import { GITHUB_HREF } from "@/lib/contact";
 import { PageShell } from "@/components/layout/PageShell";
 import { Header } from "@/components/sections/Header";
 import Link from "next/link";
@@ -7,8 +9,8 @@ import { CornerButton } from "@/components/ui/CornerButton";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "OSS program | Portfolio",
-  description: "Open source and community programs.",
+  title: `OSS | ${personal.shortName}`,
+  description: "Open source and featured repositories.",
 };
 
 export default function OssPage() {
@@ -33,7 +35,7 @@ export default function OssPage() {
               </Link>
               . Replace this copy with your own OSS program details, sponsors, and links.
             </p>
-            <CornerButton href="https://github.com" size="md" external>
+            <CornerButton href={GITHUB_HREF} size="md" external>
               View on GitHub
             </CornerButton>
           </section>
