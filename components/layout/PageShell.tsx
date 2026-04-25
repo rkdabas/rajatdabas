@@ -12,7 +12,7 @@ export function PageShell({ children }: { children: ReactNode }) {
       <PlusGridBackground />
       <VerticalRulers />
       <div
-        className="pointer-events-none relative z-10 w-full min-w-0 pl-7 pr-7 sm:pl-9 sm:pr-9 md:pl-11 md:pr-11"
+        className="pointer-events-none relative z-10 w-full min-w-0 px-4 sm:px-6 md:pl-11 md:pr-11"
       >
         <div className="mx-auto w-full min-h-0 max-w-[1200px] min-w-0 flex-1 pointer-events-auto">
           {children}
