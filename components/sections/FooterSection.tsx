@@ -1,8 +1,7 @@
 import Link from "next/link";
 import { bricolage } from "@/app/fonts";
 import { CornerButton } from "@/components/ui/CornerButton";
-
-const calUrl = "https://anytool.cal.com/hex/demo";
+import { CONTACT_MAILTO } from "@/lib/contact";
 
 export function FooterSection() {
   return (
@@ -23,7 +22,7 @@ export function FooterSection() {
           </p>
         </div>
         <div className="flex flex-col gap-4 md:items-end">
-          <CornerButton href={calUrl} size="md" external>
+          <CornerButton href={CONTACT_MAILTO} size="md" external>
             Contact
             <span className="ml-1.5 text-xs" aria-hidden>
               ↗
@@ -42,10 +41,8 @@ export function FooterSection() {
             </li>
             <li>
               <Link
-                href={calUrl}
+                href={CONTACT_MAILTO}
                 className="hover:text-hex-foreground transition-colors"
-                target="_blank"
-                rel="noreferrer"
               >
                 Demo
               </Link>

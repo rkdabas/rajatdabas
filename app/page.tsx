@@ -8,6 +8,7 @@ import { HowItWorksSection } from "@/components/sections/HowItWorksSection";
 import { ProblemSection } from "@/components/sections/ProblemSection";
 import { TrustSection } from "@/components/sections/TrustSection";
 import { VulnerabilitiesSection } from "@/components/sections/VulnerabilitiesSection";
+import { SphereSection } from "@/components/sections/SphereSection";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <Header />
         <main className="w-full min-w-0 flex-1">
           <HeroSection />
+          <SphereSection />
           <ProblemSection />
           <FoundersSection />
           <VulnerabilitiesSection />

@@ -4,8 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { bricolage } from "@/app/fonts";
 import { NavHexButton } from "@/components/ui/NavHexButton";
-
-const primaryCta = "https://anytool.cal.com/hex/demo";
+import { CONTACT_MAILTO } from "@/lib/contact";
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -56,7 +55,7 @@ export function Header() {
               <NavHexButton href="/oss">OSS Program</NavHexButton>
             </li>
             <li>
-              <NavHexButton href={primaryCta} external>
+              <NavHexButton href={CONTACT_MAILTO} external>
                 Demo
               </NavHexButton>
             </li>

@@ -1,7 +1,7 @@
 import { bricolage } from "@/app/fonts";
 import { PageShell } from "@/components/layout/PageShell";
-import { OssSphereBlock } from "@/components/oss/OssSphereBlock";
 import { Header } from "@/components/sections/Header";
+import Link from "next/link";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { CornerButton } from "@/components/ui/CornerButton";
 import type { Metadata } from "next";
@@ -23,10 +23,15 @@ export default function OssPage() {
             >
               Open source program
             </h1>
-            <OssSphereBlock />
             <p className="text-hex-muted-2 max-w-xl text-center text-base leading-relaxed">
-              Point-cloud sphere (stippled dots on a Fibonacci sphere) with continuous
-              rotation—same idea as hex.co/oss. Replace this copy with your own OSS details.
+              The interactive 3D stipple now lives on the{" "}
+              <Link
+                className="text-hex-foreground/90 underline decoration-hex-foreground/25 underline-offset-2 transition-colors hover:decoration-hex-foreground/50"
+                href="/#sphere"
+              >
+                home page
+              </Link>
+              . Replace this copy with your own OSS program details, sponsors, and links.
             </p>
             <CornerButton href="https://github.com" size="md" external>
               View on GitHub

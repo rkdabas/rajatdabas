@@ -1,7 +1,6 @@
 import { bricolage } from "@/app/fonts";
 import { CornerButton } from "@/components/ui/CornerButton";
-
-const calUrl = "https://anytool.cal.com/hex/demo";
+import { CONTACT_MAILTO } from "@/lib/contact";
 
 export function HeroSection() {
   return (
@@ -27,7 +26,7 @@ export function HeroSection() {
         </p>
 
         <div className="pt-1">
-          <CornerButton href={calUrl} size="lg" external>
+          <CornerButton href={CONTACT_MAILTO} size="lg" external>
             Book a call
             <span
               className="text-hex-foreground/80 ml-2 text-xs font-normal"

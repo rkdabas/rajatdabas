@@ -1,7 +1,6 @@
 import { bricolage } from "@/app/fonts";
 import { CornerButton } from "@/components/ui/CornerButton";
-
-const calUrl = "https://anytool.cal.com/hex/demo";
+import { CONTACT_MAILTO } from "@/lib/contact";
 
 export function FinalCtaSection() {
   return (
@@ -12,7 +11,7 @@ export function FinalCtaSection() {
         >
           Ready to see what you&apos;re missing?
         </h2>
-        <CornerButton href={calUrl} size="lg" external>
+        <CornerButton href={CONTACT_MAILTO} size="lg" external>
           Talk to us
           <span className="text-hex-foreground/80 ml-2 text-xs" aria-hidden>
             ↗
