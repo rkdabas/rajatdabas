@@ -2,7 +2,7 @@ export const personal = {
   name: "Rajat Dabas",
   shortName: "Rajat Dabas",
   tagline:
-    "I build AI-powered solutions—specializing in RAG, MCP, vector databases, and full-stack development. I architect and deploy scalable systems for thousands of users, with a focus on availability and performance. My work spans AI integration (LLMs, agents, MCP), CI/CD pipelines, and cloud infrastructure.",
+    "I have 3+ years of professional experience in building AI-powered and FullStack solutions—specializing in RAG, MCP, vector databases, SQL & NoSQL databases, and full-stack development. I architect and deploy scalable systems for thousands of users, with a focus on availability and performance. My work spans AI integration (LLMs, agents, MCP), CI/CD pipelines, and cloud infrastructure.",
   email: "rajatkumardabas@gmail.com",
 } as const;
 

@@ -1,4 +1,10 @@
-export const CONTACT_MAILTO = "mailto:rajatkumardabas@gmail.com" as const;
+export const CONTACT_EMAIL = "rajatkumardabas@gmail.com" as const;
+
+export const CONTACT_MAILTO = `mailto:${CONTACT_EMAIL}` as const;
+
+/** Opens “Compose” in Gmail in the browser (use when the OS has no mail app for mailto:). */
+export const GMAIL_WEB_COMPOSE_HREF =
+  `https://mail.google.com/mail/?view=cm&fs=1&to=${encodeURIComponent(CONTACT_EMAIL)}` as const;
 
 export const GITHUB_HREF = "https://github.com/rkdabas" as const;
 
@@ -10,7 +16,7 @@ export const X_HREF = "https://x.com/rajat-kumar-dabas" as const;
 
 /** Public Google Drive (or other) link to your resume for the footer pin icon. */
 export const RESUME_DRIVE_HREF =
-  "https://drive.google.com/drive/home" as const;
+  "https://drive.google.com/file/d/1fOgmcgbn_3phEhaNA5Wr7oQdj7w5Bhkb/view?usp=drivesdk" as const;
 
 /** Place a file at this path in `public/` for the hero “Download resume” link to work. */
 export const RESUME_PDF = "/rajat-dabas-resume.pdf" as const;

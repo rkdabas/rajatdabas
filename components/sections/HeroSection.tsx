@@ -24,7 +24,7 @@ export function HeroSection() {
           {personal.name}
         </h1>
 
-        <p className="text-hex-muted-2 max-w-2xl text-balance text-base leading-relaxed md:text-lg">
+        <p className="text-hex-muted-2 max-w-5xl text-balance text-base leading-relaxed md:text-lg">
           {personal.tagline}
         </p>
 

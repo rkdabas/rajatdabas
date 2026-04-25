@@ -70,7 +70,7 @@ function PlusCell({ size, className }: { size: number; className: string }) {
           className,
           "font-extralight text-hex-foreground/[0.08]",
           "hover:text-hex-foreground/[0.2]",
-          "pointer-events-auto block origin-center p-0.5",
+          "pointer-events-none block origin-center p-0.5",
           "text-sm leading-none antialiased",
           "transition-[color,transform] duration-500 ease-out",
           "will-change-transform cursor-default select-none",
