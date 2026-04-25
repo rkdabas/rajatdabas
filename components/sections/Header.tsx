@@ -4,12 +4,14 @@ import Link from "next/link";
 import { useState } from "react";
 import { bricolage } from "@/app/fonts";
 import { NavHexButton } from "@/components/ui/NavHexButton";
-import { CONTACT_MAILTO, GITHUB_HREF, LINKEDIN_HREF } from "@/lib/contact";
 import { personal } from "@/data/profile";
 
 const nav = [
   { href: "/#about", label: "About" },
   { href: "/#experience", label: "Experience" },
+  { href: "/#education", label: "Education" },
+  { href: "/#skills", label: "Skills" },
+  { href: "/#coding-activity", label: "Coding" },
   { href: "/#projects", label: "Projects" },
   { href: "/#achievements", label: "Awards" },
 ] as const;
@@ -64,24 +66,6 @@ export function Header() {
                 <NavHexButton href={item.href}>{item.label}</NavHexButton>
               </li>
             ))}
-            <li>
-              <NavHexButton href="/oss">OSS</NavHexButton>
-            </li>
-            <li>
-              <NavHexButton href={GITHUB_HREF} external>
-                GitHub
-              </NavHexButton>
-            </li>
-            <li>
-              <NavHexButton href={LINKEDIN_HREF} external>
-                LinkedIn
-              </NavHexButton>
-            </li>
-            <li>
-              <NavHexButton href={CONTACT_MAILTO} external>
-                Email
-              </NavHexButton>
-            </li>
           </ul>
         </nav>
       </div>

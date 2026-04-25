@@ -9,7 +9,7 @@ export function FinalCtaSection() {
         <h2
           className={`${bricolage.className} text-hex-foreground text-[1.5rem] font-normal leading-tight tracking-tight md:text-[1.9rem] lg:text-[2.1rem]`}
         >
-          Let&apos;s build something.
+          Let&apos;s Build It.
         </h2>
         <p className="text-hex-muted-2 text-balance text-base">
           Open to collaborations about back-end, data systems, and AI tooling.

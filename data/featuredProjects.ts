@@ -4,8 +4,9 @@ export type FeaturedProject = {
   id: string;
   name: string;
   description: string;
-  href: string;
-  tags: string[];
+  techStack: string[];
+  deployedHref?: string;
+  githubHref: string;
   treeOrder: number;
 };
 
@@ -14,61 +15,70 @@ const repo = (slug: string) => `${GITHUB_HREF}/${slug}`;
 export const featuredProjects: FeaturedProject[] = [
   {
     id: "splitwise",
-    name: "splitwise",
+    name: "Splitwise",
     description:
-      "Shared-expense and split-bill style utilities — data modeling and app flows in practice.",
-    href: repo("splitwise"),
-    tags: ["Full stack", "Payments"],
+      "Group expense-splitting app with JWT auth, BCrypt password hashing, and settlement workflows for managing balances across members.",
+    githubHref: repo("splitwise"),
+    techStack: ["Java", "Spring Boot", "JWT", "BCrypt", "SQLite"],
     treeOrder: 0,
   },
   {
     id: "college-management",
-    name: "college-management",
+    name: "College Management ERP",
     description:
-      "Academic and campus operations workflow tooling — CRUD, roles, and dashboards.",
-    href: repo("college-management"),
-    tags: ["Web", "Admin"],
+      "Role-based ERP for admin, student, and teacher operations with AI-enabled real-time query handling across platform workflows.",
+    githubHref: repo("college-management"),
+    techStack: ["Next.js", "PostgreSQL", "Role-based access", "AI assistant"],
     treeOrder: 1,
   },
   {
     id: "vakyav",
-    name: "vakyav",
+    name: "Vakyav",
     description:
-      "Multi-tenant voice & text AI: WebSockets, streaming, and third-party model integrations.",
-    href: repo("vakyav"),
-    tags: ["SaaS", "AI", "Django"],
+      "Multi-tenant AI voice and text SaaS with real-time streaming modules, usage-based plans, and secure tenant isolation.",
+    githubHref: repo("vakyav"),
+    techStack: [
+      "Next.js",
+      "PostgreSQL",
+      "Django Channels",
+      "WebSockets",
+      "Groq LLaMA",
+      "Vercel",
+    ],
     treeOrder: 2,
   },
   {
-    id: "LearnSphere",
+    id: "learnsphere",
     name: "LearnSphere",
-    description: "Learning-focused web app: content delivery and study workflows.",
-    href: repo("LearnSphere"),
-    tags: ["JavaScript", "EdTech"],
+    description:
+      "EdTech platform for instructors and students with course management, OTP/email auth flows, analytics dashboards, and payments.",
+    githubHref: repo("LearnSphere"),
+    techStack: [
+      "React",
+      "Redux",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "Razorpay API",
+    ],
     treeOrder: 3,
   },
   {
-    id: "Budpiler",
-    name: "Budpiler",
-    description: "Custom compiler / language tooling experiments and pipelines.",
-    href: repo("Budpiler"),
-    tags: ["Compiler", "Systems"],
+    id: "pathfinding-visualizer",
+    name: "Pathfinding Visualizer",
+    description:
+      "Interactive visualizer for A*, BFS, DFS, and Dijkstra with maze generation and adjustable simulation speed.",
+    githubHref: repo("Pathfinding-Visualizer"),
+    techStack: ["React", "TypeScript", "Tailwind CSS", "Algorithms"],
     treeOrder: 4,
   },
   {
-    id: "Pathfinding-Visualizer",
-    name: "Pathfinding-Visualizer",
-    description: "Visual exploration of pathfinding and graph search algorithms in the browser.",
-    href: repo("Pathfinding-Visualizer"),
-    tags: ["Algorithms", "Canvas"],
+    id: "portfolio-builder",
+    name: "Portfolio Builder",
+    description:
+      "Platform to generate personalized portfolio sites from profile input, with auth and backend APIs for full content management.",
+    githubHref: repo("Portfolio-Builder"),
+    techStack: ["React", "Redux Toolkit", "Node.js", "MongoDB", "REST APIs"],
     treeOrder: 5,
-  },
-  {
-    id: "Portfolio-Builder",
-    name: "Portfolio-Builder",
-    description: "Configurable portfolio and layout tooling for static sites and demos.",
-    href: repo("Portfolio-Builder"),
-    tags: ["Next.js", "UI"],
-    treeOrder: 6,
-  },
+  }
 ];

@@ -72,8 +72,12 @@ export function ProjectTreeSection() {
         <ul className="border-hex-line/15 relative z-[1] mt-0 grid list-none grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {sorted.map((p) => (
             <li key={p.id} className="min-w-0">
+              {(() => {
+                const primaryHref = p.deployedHref ?? p.githubHref;
+                const primaryLabel = p.deployedHref ? "Live link" : "GitHub";
+                return (
               <Link
-                href={p.href}
+                href={primaryHref}
                 className="border-hex-foreground/12 bg-hex-foreground/4 hover:border-hex-foreground/30 hover:bg-hex-foreground/7 group block h-full rounded-2xl border p-4 transition-all duration-200 md:p-5"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -83,11 +87,17 @@ export function ProjectTreeSection() {
                 >
                   {p.name}
                 </h3>
-                <p className="text-hex-muted-2 group-hover:text-hex-muted line-clamp-3 mt-2 min-h-14 text-sm leading-relaxed">
+                <p className="text-hex-muted mt-3 text-[11px] font-semibold tracking-wide uppercase">
+                  Description
+                </p>
+                <p className="text-hex-muted-2 group-hover:text-hex-muted line-clamp-4 mt-1 min-h-16 text-sm leading-relaxed">
                   {p.description}
                 </p>
-                <p className="text-hex-muted-2 mt-3 flex flex-wrap gap-1.5 text-xs">
-                  {p.tags.map((t) => (
+                <p className="text-hex-muted mt-3 text-[11px] font-semibold tracking-wide uppercase">
+                  Tech Stack
+                </p>
+                <p className="text-hex-muted-2 mt-1 flex flex-wrap gap-1.5 text-xs">
+                  {p.techStack.map((t) => (
                     <span
                       key={t}
                       className="bg-hex-foreground/5 rounded-md px-2 py-0.5"
@@ -97,11 +107,13 @@ export function ProjectTreeSection() {
                   ))}
                 </p>
                 <p
-                  className={`${dmMono.className} text-hex-muted-2 group-hover:text-hex-muted mt-2 truncate text-xs`}
+                  className={`${dmMono.className} text-hex-muted-2 group-hover:text-hex-muted mt-3 truncate text-xs`}
                 >
-                  {p.href.replace("https://", "")}
+                  {primaryLabel}: {primaryHref.replace("https://", "")}
                 </p>
               </Link>
+                );
+              })()}
             </li>
           ))}
         </ul>
