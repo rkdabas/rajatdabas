@@ -1,26 +1,54 @@
 @import "tailwindcss";
 
+/* Design tokens from hex.co (Framer published CSS) */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --hex-bg: #f7f7f7;
+  --hex-foreground: #000000;
+  --hex-muted: #5e5e5e;
+  --hex-muted-2: #6e6e6e;
+  --hex-line: #c7c7c7;
+  --hex-red: #ff312f;
+  --hex-orange: #ff8b17;
+  --hex-cta: #fa651e;
+  --hex-dark: #1c1c1c;
+  --hex-surface-30: #ededed4d;
+  --hex-border: #d9d9d9;
+  --background: var(--hex-bg);
+  --foreground: var(--hex-foreground);
+  --section-pad: clamp(1.5rem, 4vw, 2.5rem);
+  --page-max: 1200px;
+  --content-narrow: 1000px;
 }
 
 @theme inline {
+  --color-hex-bg: var(--hex-bg);
+  --color-hex-foreground: var(--hex-foreground);
+  --color-hex-muted: var(--hex-muted);
+  --color-hex-muted-2: var(--hex-muted-2);
+  --color-hex-line: var(--hex-line);
+  --color-hex-red: var(--hex-red);
+  --color-hex-orange: var(--hex-orange);
+  --color-hex-cta: var(--hex-cta);
+  --color-hex-dark: var(--hex-dark);
+  --color-hex-surface-30: var(--hex-surface-30);
+  --color-hex-border: var(--hex-border);
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-bricolage);
+  --font-mono: var(--font-dm-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--hex-bg);
+  color: var(--hex-foreground);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
