@@ -1,5 +1,6 @@
 import { PageShell } from "@/components/layout/PageShell";
 import { AchievementsSection } from "@/components/sections/AchievementsSection";
+import { CodingActivitySection } from "@/components/sections/CodingActivitySection";
 import { EducationSection } from "@/components/sections/EducationSection";
 import { ExperienceSection } from "@/components/sections/ExperienceSection";
 import { FinalCtaSection } from "@/components/sections/FinalCtaSection";
@@ -19,6 +20,7 @@ export default function Home() {
           <ExperienceSection />
           <EducationSection />
           <SkillsSection />
+          <CodingActivitySection />
           <ProjectTreeSection />
           <AchievementsSection />
           <FinalCtaSection />

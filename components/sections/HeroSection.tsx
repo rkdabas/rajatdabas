@@ -1,8 +1,6 @@
-import Link from "next/link";
 import { bricolage } from "@/app/fonts";
 import { personal } from "@/data/profile";
-import { CornerButton } from "@/components/ui/CornerButton";
-import { CONTACT_MAILTO, GITHUB_HREF, RESUME_PDF } from "@/lib/contact";
+import { SocialIconLinks } from "@/components/ui/SocialIconLinks";
 
 export function HeroSection() {
   return (
@@ -30,32 +28,7 @@ export function HeroSection() {
           {personal.tagline}
         </p>
 
-        <div className="flex flex-col items-stretch justify-center gap-3 pt-1 sm:flex-row sm:items-center">
-          <CornerButton href={GITHUB_HREF} size="lg" external>
-            GitHub
-            <span
-              className="text-hex-foreground/80 ml-2 text-xs font-normal"
-              aria-hidden
-            >
-              ↗
-            </span>
-          </CornerButton>
-          <CornerButton href={CONTACT_MAILTO} size="lg" external>
-            Email
-            <span
-              className="text-hex-foreground/80 ml-2 text-xs font-normal"
-              aria-hidden
-            >
-              ↗
-            </span>
-          </CornerButton>
-          <Link
-            href={RESUME_PDF}
-            className="border-hex-foreground/15 text-hex-foreground/90 hover:border-hex-foreground/30 hover:bg-hex-foreground/4 inline-flex min-h-11 min-w-[10rem] items-center justify-center rounded-2xl border-2 border-dotted px-4 text-sm font-medium transition-colors"
-          >
-            Download resume
-          </Link>
-        </div>
+        <SocialIconLinks className="flex flex-wrap items-center justify-center gap-1 pt-1" />
       </div>
     </section>
   );
