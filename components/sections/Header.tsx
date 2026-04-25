@@ -63,15 +63,25 @@ export function Header() {
 
         <nav
           className={
-            "flex w-full max-w-full flex-1 flex-col items-stretch gap-3 " +
-            "md:w-auto md:flex-initial md:flex-row md:items-center md:justify-end md:gap-2 lg:gap-4 " +
+            "w-full max-w-full flex-1 " +
+            "max-md:pt-1 " +
+            "md:w-auto md:flex-initial md:items-center md:justify-end " +
             (open ? "" : " max-md:hidden")
           }
         >
-          <ul className="text-hex-muted flex flex-col gap-3 text-sm font-medium md:ml-0 md:flex-row md:flex-wrap md:items-center md:gap-x-2 md:gap-y-2 lg:gap-x-4">
+          <ul
+            className={
+              "text-hex-muted list-none text-sm font-medium " +
+              "max-md:grid max-md:grid-cols-2 max-md:gap-x-4 max-md:gap-y-3 max-md:justify-items-stretch " +
+              "max-md:[&>li:nth-child(7)]:col-span-2 " +
+              "md:ml-0 md:flex md:flex-row md:flex-wrap md:items-center md:gap-x-2 md:gap-y-2 lg:gap-x-4"
+            }
+          >
             {nav.map((item) => (
-              <li key={item.href}>
-                <NavHexButton href={item.href}>{item.label}</NavHexButton>
+              <li key={item.href} className="min-w-0">
+                <NavHexButton className="max-md:w-full" href={item.href}>
+                  {item.label}
+                </NavHexButton>
               </li>
             ))}
           </ul>
