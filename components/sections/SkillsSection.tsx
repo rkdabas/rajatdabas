@@ -1,5 +1,6 @@
 import { bricolage } from "@/app/fonts";
 import { skills } from "@/data/profile";
+import { SkillIconMarquee } from "@/components/sections/SkillIconMarquee";
 
 const groups: { key: keyof typeof skills; label: string }[] = [
   { key: "languages", label: "Languages" },
@@ -18,10 +19,16 @@ export function SkillsSection() {
     >
       <div className="mx-auto max-w-[1100px] px-4 sm:px-6">
         <h2
-          className={`${bricolage.className} text-hex-foreground mb-10 text-center text-2xl font-normal tracking-tight md:text-3xl`}
+          className={`${bricolage.className} text-hex-foreground mb-6 text-center text-2xl font-normal tracking-tight md:text-3xl`}
         >
           Skills
         </h2>
+        <p className="text-hex-muted-2 mb-6 text-center text-sm md:text-base">
+          Technologies I've worked with to build products.
+        </p>
+        <div className="mb-10">
+          <SkillIconMarquee />
+        </div>
         <div className="grid gap-4 sm:grid-cols-2">
           {groups.map(({ key, label }) => (
             <div

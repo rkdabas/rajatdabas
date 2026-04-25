@@ -43,6 +43,26 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Skills marquee: infinite scroll (duplicate row); JS-free */
+@keyframes skill-marquee {
+  from {
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    transform: translate3d(-50%, 0, 0);
+  }
+}
+
+.skill-marquee-track {
+  animation: skill-marquee 90s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skill-marquee-track {
+    animation: none;
+  }
+}
+
 body {
   background: var(--hex-bg);
   color: var(--hex-foreground);
