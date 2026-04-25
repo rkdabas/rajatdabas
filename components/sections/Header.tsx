@@ -1,10 +1,10 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import { bricolage } from "@/app/fonts";
-import { NavHexButton } from "@/components/ui/NavHexButton";
 import { personal } from "@/data/profile";
+import { NavHexButton } from "@/components/ui/NavHexButton";
 
 const nav = [
   { href: "/#about", label: "About" },
@@ -25,9 +25,17 @@ export function Header() {
         <div className="flex w-full min-w-0 items-center justify-between md:w-auto">
           <Link
             href="/#about"
-            className={`${bricolage.className} text-hex-foreground shrink-0 text-lg font-medium tracking-tight md:text-xl`}
+            className="border-hex-line/25 focus-visible:ring-hex-foreground/30 inline-flex h-18 w-20 shrink-0 overflow-hidden rounded-full border border-transparent transition-opacity hover:opacity-90 sm:h-16 sm:w-16 focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-offset-hex-bg focus-visible:outline-none"
+            aria-label={`${personal.name} — about`}
           >
-            {personal.shortName}
+            <Image
+              src="/profile-header.png"
+              alt=""
+              width={64}
+              height={64}
+              className="h-14 w-14 object-cover sm:h-16 sm:w-16"
+              priority
+            />
           </Link>
           <button
             type="button"
