@@ -4,21 +4,28 @@ import Link from "next/link";
 import { useState } from "react";
 import { bricolage } from "@/app/fonts";
 import { NavHexButton } from "@/components/ui/NavHexButton";
+import { CONTACT_MAILTO, GITHUB_HREF, LINKEDIN_HREF } from "@/lib/contact";
+import { personal } from "@/data/profile";
 
-const primaryCta = "https://anytool.cal.com/hex/demo";
+const nav = [
+  { href: "/#about", label: "About" },
+  { href: "/#experience", label: "Experience" },
+  { href: "/#projects", label: "Projects" },
+  { href: "/#achievements", label: "Awards" },
+] as const;
 
 export function Header() {
   const [open, setOpen] = useState(false);
 
   return (
     <header className="border-hex-line/40 relative z-50 w-full border-b border-dashed bg-hex-bg/50 backdrop-blur-sm">
-      <div className="mx-auto flex w-full flex-col gap-4 py-5 md:flex-row md:items-center md:justify-between">
+      <div className="mx-auto flex w-full max-w-[1340px] flex-col gap-4 px-4 py-5 sm:px-6 md:flex-row md:items-center md:justify-between">
         <div className="flex w-full min-w-0 items-center justify-between md:w-auto">
           <Link
-            href="/"
+            href="/#about"
             className={`${bricolage.className} text-hex-foreground shrink-0 text-lg font-medium tracking-tight md:text-xl`}
           >
-            Portfolio
+            {personal.shortName}
           </Link>
           <button
             type="button"
@@ -46,18 +53,33 @@ export function Header() {
 
         <nav
           className={
-            "flex w-full max-w-full flex-1 flex-col items-stretch gap-4 " +
-            "md:w-auto md:flex-initial md:flex-row md:items-center md:gap-12 lg:gap-16 " +
+            "flex w-full max-w-full flex-1 flex-col items-stretch gap-3 " +
+            "md:w-auto md:flex-initial md:flex-row md:items-center md:justify-end md:gap-2 lg:gap-4 " +
             (open ? "" : " max-md:hidden")
           }
         >
-          <ul className="text-hex-muted flex flex-col gap-4 text-sm font-medium md:ml-auto md:flex-row md:items-center md:gap-8 lg:gap-12">
+          <ul className="text-hex-muted flex flex-col gap-3 text-sm font-medium md:ml-0 md:flex-row md:flex-wrap md:items-center md:gap-x-2 md:gap-y-2 lg:gap-x-4">
+            {nav.map((item) => (
+              <li key={item.href}>
+                <NavHexButton href={item.href}>{item.label}</NavHexButton>
+              </li>
+            ))}
             <li>
-              <NavHexButton href="/oss">OSS Program</NavHexButton>
+              <NavHexButton href="/oss">OSS</NavHexButton>
             </li>
             <li>
-              <NavHexButton href={primaryCta} external>
-                Demo
+              <NavHexButton href={GITHUB_HREF} external>
+                GitHub
+              </NavHexButton>
+            </li>
+            <li>
+              <NavHexButton href={LINKEDIN_HREF} external>
+                LinkedIn
+              </NavHexButton>
+            </li>
+            <li>
+              <NavHexButton href={CONTACT_MAILTO} external>
+                Email
               </NavHexButton>
             </li>
           </ul>

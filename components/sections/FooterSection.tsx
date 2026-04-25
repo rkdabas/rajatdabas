@@ -1,54 +1,67 @@
 import Link from "next/link";
 import { bricolage } from "@/app/fonts";
+import { personal } from "@/data/profile";
 import { CornerButton } from "@/components/ui/CornerButton";
-
-const calUrl = "https://anytool.cal.com/hex/demo";
+import { CONTACT_MAILTO, GITHUB_HREF, LINKEDIN_HREF } from "@/lib/contact";
 
 export function FooterSection() {
   return (
     <footer className="w-full border-t border-hex-line/40 bg-transparent">
-      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-10 py-14 md:flex-row md:items-end md:justify-between">
+      <div className="mx-auto flex w-full max-w-[1200px] flex-col gap-10 px-4 py-14 sm:px-6 md:flex-row md:items-end md:justify-between">
         <div>
-          <div className="border-hex-foreground/10 mb-5 inline-flex items-center gap-2.5 rounded-full border border-dashed bg-white/40 px-3 py-1.5 text-xs text-hex-muted">
-            <span
-              className="inline-block h-1.5 w-1.5 rounded-full"
-              style={{ background: "linear-gradient(135deg, #ff8b17, #ff312f)" }}
-            />
-            Backed by Y Combinator W26
-          </div>
           <p
             className={`${bricolage.className} text-hex-foreground text-2xl font-medium tracking-tight md:text-3xl`}
           >
-            Hex Security
+            {personal.shortName}
+          </p>
+          <p className="text-hex-muted-2 mt-2 max-w-md text-sm">
+            {personal.tagline}
           </p>
         </div>
-        <div className="flex flex-col gap-4 md:items-end">
-          <CornerButton href={calUrl} size="md" external>
-            Contact
-            <span className="ml-1.5 text-xs" aria-hidden>
-              ↗
-            </span>
-          </CornerButton>
+        <div className="flex flex-col gap-3 md:items-end">
+          <div className="flex flex-wrap gap-3">
+            <CornerButton href={CONTACT_MAILTO} size="md" external>
+              Contact
+            </CornerButton>
+            <CornerButton href={GITHUB_HREF} size="md" external>
+              GitHub
+            </CornerButton>
+            <CornerButton href={LINKEDIN_HREF} size="md" external>
+              LinkedIn
+            </CornerButton>
+          </div>
         </div>
       </div>
       <div className="border-t border-hex-line/30">
-        <div className="mx-auto flex max-w-[1200px] flex-col gap-4 py-8 text-sm text-hex-muted md:flex-row md:items-center md:justify-between">
-          <p className="order-2 md:order-1">© {new Date().getFullYear()} All rights reserved.</p>
-          <ul className="order-1 flex flex-wrap items-center gap-6 font-medium md:order-2">
+        <div className="mx-auto flex max-w-[1200px] flex-col gap-4 px-4 py-8 text-sm text-hex-muted sm:px-6 md:flex-row md:items-center md:justify-between">
+          <p className="order-2 md:order-1">
+            © {new Date().getFullYear()} {personal.shortName}. All rights reserved.
+          </p>
+          <ul className="order-1 flex flex-wrap items-center gap-4 font-medium md:order-2 md:gap-6">
             <li>
               <Link href="/oss" className="hover:text-hex-foreground transition-colors">
-                OSS Program
+                OSS program
               </Link>
             </li>
             <li>
-              <Link
-                href={calUrl}
+              <a
+                href={GITHUB_HREF}
                 className="hover:text-hex-foreground transition-colors"
                 target="_blank"
                 rel="noreferrer"
               >
-                Demo
-              </Link>
+                rkdabas
+              </a>
+            </li>
+            <li>
+              <a
+                href={LINKEDIN_HREF}
+                className="hover:text-hex-foreground transition-colors"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
             </li>
           </ul>
         </div>
