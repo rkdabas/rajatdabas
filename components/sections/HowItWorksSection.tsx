@@ -54,7 +54,7 @@ export function HowItWorksSection() {
               Report
             </h3>
             <p className="text-hex-muted-2 text-base leading-relaxed">
-              Validated findings with reproduction steps and remediation guidance.
+              Validated findings with reproduction steps and remediation guidance
             </p>
           </div>
         </div>
